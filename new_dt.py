@@ -11,11 +11,16 @@ class Fraction:
         return '{}/{}'.format(self.numerator,self.denominator)
 
 
+    #when give print(fraction1+fraction2+fraction3) it will call the __add__ method and return the new fraction object
+     
     def __add__(self,other):
         new_numerator=self.numerator*other.denominator +other.numerator*self.denominator
         new_denominator=self.denominator*other.denominator
         return Fraction(new_numerator,new_denominator)
 
+
+
+    # when you give print(fraction1-fraction2-fraction3) it will call the __sub__ method and return the new fraction object
 
     def __sub__(self,other):
         new_numerator=self.numerator*other.denominator - other.numerator*self.denominator
@@ -24,12 +29,17 @@ class Fraction:
         return Fraction(new_numerator,new_denominator)
 
 
+    #when you give print(fraction1*fraction2*fraction3) it will call the __mul__ method automaticallly and return the new fraction object
+
+
     def __mul__(self,other):
         new_numerator=self.numerator*other.numerator
         new_denominator=self.denominator*other.denominator
 
         return Fraction(new_numerator,new_denominator)
 
+
+    #when you give print(fraction1/fraction2/fraction3) it will call the __truediv__ method automaticallly and return the new fraction object
 
 
     def __truediv__(self,other):
