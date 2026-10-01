@@ -1,4 +1,5 @@
 
+#Fraction class to represent a fraction with a numerator and denominator
 class Fraction:
     #initializing of parameterizing the constructor
     def __init__(self,x,y):
