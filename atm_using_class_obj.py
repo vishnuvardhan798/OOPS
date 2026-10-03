@@ -1,7 +1,7 @@
 class ATM:
     def __init__(self):
-        self.__balance=10000
-        self.pin=1234
+        self.__balance=0
+        self.pin=''
         self.menu()
 
 
@@ -33,7 +33,7 @@ class ATM:
         elif user_input=="4":
             self.withdraw_money()
         else:
-            exit()
+            pass
 
     def set_pin(self):
         new_pin=int(input("enter new pin"))
@@ -77,8 +77,11 @@ class ATM:
         
 
     
-obj=ATM()
+object=ATM()
+object.set_balance(1000)
+#object._ATM__balance="hehe"
 
+print(object.get_balance())
 
 
 
