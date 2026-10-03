@@ -1,8 +1,20 @@
 class ATM:
     def __init__(self):
-        self.balance=10000
+        self.__balance=10000
         self.pin=1234
         self.menu()
+
+
+    def get_balance(self):
+        return self.__balance
+
+    def set_balance(self,new_value):
+        if type(new_value)==int:
+            self.__balance=new_value
+        else:
+            print("enter correct data type")
+
+
     def menu(self):
         user_input=input("""hello how can i help you ?
         1.set pin 
@@ -43,7 +55,7 @@ class ATM:
     def check_balance(self):
         user_pin=int(input("enter pin : "))
         if user_pin == self.pin:
-            print("Balance : $",self.balance)
+            print("Balance : $",self.__balance)
         else:
             print("enter correct pin!")
         self.menu()
@@ -53,11 +65,11 @@ class ATM:
         user_pin=int(input("enter pin : "))
         if user_pin == self.pin:
             amount=int(input("enter withdraw amount :"))
-            if amount>self.balance:
+            if amount>self.__balance:
                 print("insufficient money")
 
             else:
-                self.balance-=amount
+                self.__balance-=amount
                 print("amount withdraw successfully")
         else:
             print("enter correct pin!")
